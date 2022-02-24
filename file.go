@@ -599,8 +599,10 @@ func (f *File) ValidateWith(opts *ValidateOpts) error {
 		if err := f.isFileAmount(false); err != nil {
 			return err
 		}
-		if err := f.isSequenceAscending(); err != nil {
-			return err
+		if !opts.CustomTraceNumbers {
+			if err := f.isSequenceAscending(); err != nil {
+				return err
+			}
 		}
 		return f.isEntryHash(false)
 	}
