@@ -24,7 +24,7 @@ import (
 	"path/filepath"
 	"strconv"
 
-	"github.com/moov-io/ach"
+	"github.com/Alviere/ach"
 )
 
 // Example_ppdReadDebit reads a PPD debit file

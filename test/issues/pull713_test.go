@@ -22,7 +22,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/moov-io/ach"
+	"github.com/Alviere/ach"
 )
 
 func TestPull713(t *testing.T) {

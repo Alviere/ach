@@ -26,7 +26,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/moov-io/ach"
+	"github.com/Alviere/ach"
 
 	"github.com/go-kit/kit/log"
 )

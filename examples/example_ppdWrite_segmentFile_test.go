@@ -23,7 +23,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/moov-io/ach"
+	"github.com/Alviere/ach"
 )
 
 func Example_ppdWriteSegmentFile() {

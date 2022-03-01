@@ -21,7 +21,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/moov-io/ach"
+	"github.com/Alviere/ach"
 )
 
 // Example_dneWrite writes a DNR file

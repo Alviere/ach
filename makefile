@@ -6,13 +6,13 @@ VERSION := $(shell grep -Eo '(v[0-9]+[\.][0-9]+[\.][0-9]+([-a-zA-Z0-9]*)?)' vers
 build:
 	go fmt ./...
 	@mkdir -p ./bin/
-	go build github.com/moov-io/ach
-	go build -o bin/examples-http github.com/moov-io/ach/examples/http
-	CGO_ENABLED=0 go build -o ./bin/server github.com/moov-io/ach/cmd/server
+	go build github.com/Alviere/ach
+	go build -o bin/examples-http github.com/Alviere/ach/examples/http
+	CGO_ENABLED=0 go build -o ./bin/server github.com/Alviere/ach/cmd/server
 
 build-webui:
 	cp $(shell go env GOROOT)/misc/wasm/wasm_exec.js ./cmd/webui/assets/wasm_exec.js
-	GOOS=js GOARCH=wasm go build -o ./cmd/webui/assets/ach.wasm github.com/moov-io/ach/cmd/webui/ach/
+	GOOS=js GOARCH=wasm go build -o ./cmd/webui/assets/ach.wasm github.com/Alviere/ach/cmd/webui/ach/
 	CGO_ENABLED=0 go build -o ./bin/webui ./cmd/webui
 
 clean:
@@ -35,11 +35,11 @@ check-openapi:
 
 dist: clean build
 ifeq ($(OS),Windows_NT)
-	CGO_ENABLED=1 GOOS=windows go build -o bin/achcli.exe github.com/moov-io/ach/cmd/achcli
-	CGO_ENABLED=1 GOOS=windows go build -o bin/ach.exe github.com/moov-io/ach/cmd/server
+	CGO_ENABLED=1 GOOS=windows go build -o bin/achcli.exe github.com/Alviere/ach/cmd/achcli
+	CGO_ENABLED=1 GOOS=windows go build -o bin/ach.exe github.com/Alviere/ach/cmd/server
 else
-	CGO_ENABLED=0 GOOS=$(PLATFORM) go build -o bin/achcli-$(PLATFORM)-amd64 github.com/moov-io/ach/cmd/achcli
-	CGO_ENABLED=0 GOOS=$(PLATFORM) go build -o bin/ach-$(PLATFORM)-amd64 github.com/moov-io/ach/cmd/server
+	CGO_ENABLED=0 GOOS=$(PLATFORM) go build -o bin/achcli-$(PLATFORM)-amd64 github.com/Alviere/ach/cmd/achcli
+	CGO_ENABLED=0 GOOS=$(PLATFORM) go build -o bin/ach-$(PLATFORM)-amd64 github.com/Alviere/ach/cmd/server
 endif
 
 docker: clean docker-hub docker-openshift docker-fuzz docker-webui

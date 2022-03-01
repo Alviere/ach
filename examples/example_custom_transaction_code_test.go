@@ -21,7 +21,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/moov-io/ach"
+	"github.com/Alviere/ach"
 )
 
 // Example_customTransactionCode writes an ACH file with a non-standard NACHA TransactionCodes

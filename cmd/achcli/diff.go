@@ -10,7 +10,7 @@ import (
 	"os"
 	// "text/tabwriter"
 
-	"github.com/moov-io/ach"
+	"github.com/Alviere/ach"
 
 	"github.com/juju/ansiterm"
 	"github.com/mattn/go-isatty"

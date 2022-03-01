@@ -21,7 +21,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/moov-io/ach"
+	"github.com/Alviere/ach"
 )
 
 // Example_ackWrite writes an ACK File

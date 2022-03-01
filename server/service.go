@@ -23,7 +23,7 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/moov-io/ach"
+	"github.com/Alviere/ach"
 	"github.com/moov-io/base"
 )
 

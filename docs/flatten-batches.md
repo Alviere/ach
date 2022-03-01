@@ -16,7 +16,7 @@ Note: FlattenBatches (via `FlattenBatches()`) is only in ACH v1.2.0 and later.
 
 ## Creating Flattened Batches
 
-An ACH [File](https://godoc.org/github.com/moov-io/ach#File) supports calling [FlattenBatches](https://godoc.org/github.com/moov-io/ach#File.FlattenBatches):
+An ACH [File](https://godoc.org/github.com/Alviere/ach#File) supports calling [FlattenBatches](https://godoc.org/github.com/Alviere/ach#File.FlattenBatches):
 
 ```go
 // Open a file for reading. Any io.Reader can be used.

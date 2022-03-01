@@ -133,7 +133,7 @@ Version v1.4.0 of ACH adds several notable features such as custom validation, a
 
 **Custom Validation**
 
-The ACH library (and HTTP server) now supports custom validation with the [`ValidateOpts`](https://godoc.org/github.com/moov-io/ach#ValidateOpts) struct by calling `File.SetValidation(..)` and `Reader.SetValidation(...)`. This offers various options:
+The ACH library (and HTTP server) now supports custom validation with the [`ValidateOpts`](https://godoc.org/github.com/Alviere/ach#ValidateOpts) struct by calling `File.SetValidation(..)` and `Reader.SetValidation(...)`. This offers various options:
 
 - `RequireABAOrigin bool`: Enable or disable routing number validation over the `ImmediateOrigin` file header field
 - `BypassOriginValidation`: Skip validation for the `ImmediateOrigin` file header field and allow custom `TraceNumber` values
@@ -262,8 +262,8 @@ ADDITIONS
    - FlattenBatches [minimizes File Batches by consolidating them](./docs/flatten-batches.md) with the same BatchHeader data into one batch.
 - Add `POST /files/:id/flatten` which calls `FlattenBatches()` on a specific ACH file
 - Add `POST /files/:id/balance` to [add Offset records](./docs/balanced-offset.md) onto each Batch in an ACH File.
-- Addenda98: Add `ChangeCodeField()` for detailed information about a NOC/COR change file ([`ChangeCode`](https://godoc.org/github.com/moov-io/ach#ChangeCode))
-- Addenda99: Add `ReturnCodeField()` for detailed information about file returns ([`ReturnCode`](https://godoc.org/github.com/moov-io/ach#ReturnCode))
+- Addenda98: Add `ChangeCodeField()` for detailed information about a NOC/COR change file ([`ChangeCode`](https://godoc.org/github.com/Alviere/ach#ChangeCode))
+- Addenda99: Add `ReturnCodeField()` for detailed information about file returns ([`ReturnCode`](https://godoc.org/github.com/Alviere/ach#ReturnCode))
 
 BUG FIXES
 
@@ -293,7 +293,7 @@ In our OpenAPI we've renamed fields generated as `Id` to `ID`, which is more in-
 
 BUG FIXES
 
-- fileHeader: allow immediate origin to be a 10 digit value (See: [#513](https://github.com/moov-io/ach/pull/513) by [@eduardev](https://github.com/eduardev))
+- fileHeader: allow immediate origin to be a 10 digit value (See: [#513](https://github.com/Alviere/ach/pull/513) by [@eduardev](https://github.com/eduardev))
 - Fix JSON omitempty typo in `ADVEntryDetail`
 - fileHeader: trim padded 0's from ImmediateOriginField() and fixup docs
 - batch: only check DNE specifics if the SEC code is DNE
@@ -305,11 +305,11 @@ ADDITIONS
 
 - batch: add Equal method
 - Addenda99: Add `ReturnCodeField()` for detailed information about a returned file
-- files: support arbitrary merging of ACH files (See [#529](https://github.com/moov-io/ach/issues/529))
+- files: support arbitrary merging of ACH files (See [#529](https://github.com/Alviere/ach/issues/529))
 - entryDetail: validate that Amount is non-negative
 - batch: create Debit and Credit EntryDetail offset records if needed (via `WithOffset`)
 - addenda types: Add RuneCountInString check to Parse(record string) function
-- file: create debit ach file and credit ach file from a mixed debit and credit ach file (via `SegmentFile`) (see [#528](https://github.com/moov-io/ach/issues/528))
+- file: create debit ach file and credit ach file from a mixed debit and credit ach file (via `SegmentFile`) (see [#528](https://github.com/Alviere/ach/issues/528))
 - cmd/server: add environment variables to override command line flags (`-http.addr` and `-log.format`)
 - file: support ADV and IAT files in (*File).SegmentFile(...)
 - cmd/server: bind HTTP server with TLS if HTTPS_* variables are defined
@@ -335,25 +335,25 @@ BREAKING CHANGES
 
 ADDITIONS
 
-- Add const values for `BatchHeader.StandardEntryClassCode` (See [#392](https://github.com/moov-io/ach/issues/392))
-- Add const values for `BatchHeader.ServiceClassCode` and `BatchControl.ServiceClassCode`. (See [#391](https://github.com/moov-io/ach/issues/391))
-- Add const values for `EntryDetail.TransactionCode` (See [#363](https://github.com/moov-io/ach/issues/363))
-- server: Record `ach_files_deleted` metric. (See: [#408](https://github.com/moov-io/ach/pull/408))
-- server: log x-request-id header if present. (See: [#407](https://github.com/moov-io/ach/pull/407))
+- Add const values for `BatchHeader.StandardEntryClassCode` (See [#392](https://github.com/Alviere/ach/issues/392))
+- Add const values for `BatchHeader.ServiceClassCode` and `BatchControl.ServiceClassCode`. (See [#391](https://github.com/Alviere/ach/issues/391))
+- Add const values for `EntryDetail.TransactionCode` (See [#363](https://github.com/Alviere/ach/issues/363))
+- server: Record `ach_files_deleted` metric. (See: [#408](https://github.com/Alviere/ach/pull/408))
+- server: log x-request-id header if present. (See: [#407](https://github.com/Alviere/ach/pull/407))
 - server: Delete old `ach.File` objects from in-memory repository according to `ACH_FILE_TTL` env variable.
 - server: Support `-log.format=json` for JSON formatted logs
 
 BUG FIXES
 
-- Accept File's without an ID specified. Generate a random ID. (See: [#405](https://github.com/moov-io/ach/pull/405))
-- server: Fix nil panics. (See: [#406](https://github.com/moov-io/ach/pull/406))
-- server: Fix type-casting panics. (See: [#423](https://github.com/moov-io/ach/pull/423))
-- server: validate file endpoint returns 400 instead of 500 (See: [#488](https://github.com/moov-io/ach/pull/488))
+- Accept File's without an ID specified. Generate a random ID. (See: [#405](https://github.com/Alviere/ach/pull/405))
+- server: Fix nil panics. (See: [#406](https://github.com/Alviere/ach/pull/406))
+- server: Fix type-casting panics. (See: [#423](https://github.com/Alviere/ach/pull/423))
+- server: validate file endpoint returns 400 instead of 500 (See: [#488](https://github.com/Alviere/ach/pull/488))
 - server: set CORS headers on `GET /ping` route
 
 BUILD
 
-- `megacheck` is deprecated. staticcheck should be used instead. (See [#430](https://github.com/moov-io/ach/issues/430))
+- `megacheck` is deprecated. staticcheck should be used instead. (See [#430](https://github.com/Alviere/ach/issues/430))
 - Automate releases with Docker and binary uploads to release page.
 - Update dependencies to their latest versions
 - Update to Go 1.12
@@ -362,23 +362,23 @@ BUILD
 
 BREAKING CHANGES
 
-- `TraceNumber` has been changed from `int` to a `string`. (See [#366](https://github.com/moov-io/ach/issues/366))
+- `TraceNumber` has been changed from `int` to a `string`. (See [#366](https://github.com/Alviere/ach/issues/366))
    - Previously zero-prefixed ABA routing numbers would have their leading zero truncated.
-- `OriginalTrace` has been changed from `int` to a `string`. (See [#366](https://github.com/moov-io/ach/issues/366))
+- `OriginalTrace` has been changed from `int` to a `string`. (See [#366](https://github.com/Alviere/ach/issues/366))
 
 ADDITIONS
 
 - Support `StandardEntryClassCode` (Batch types):
-    - ADV (See [#340](https://github.com/moov-io/ach/issues/340))
-    - TRC (See [#346](https://github.com/moov-io/ach/issues/346))
-    - TRX (See [#372](https://github.com/moov-io/ach/issues/372))
-    - XCK (See [#347](https://github.com/moov-io/ach/issues/347))
-- `TransactionCode` match `ServiceClassCode` (See [#56](https://github.com/moov-io/ach/issues/56))
-- `Addenda02.TerminalState` validation for BatchPOS and BatchSHR (See [#375](https://github.com/moov-io/ach/issues/375))
+    - ADV (See [#340](https://github.com/Alviere/ach/issues/340))
+    - TRC (See [#346](https://github.com/Alviere/ach/issues/346))
+    - TRX (See [#372](https://github.com/Alviere/ach/issues/372))
+    - XCK (See [#347](https://github.com/Alviere/ach/issues/347))
+- `TransactionCode` match `ServiceClassCode` (See [#56](https://github.com/Alviere/ach/issues/56))
+- `Addenda02.TerminalState` validation for BatchPOS and BatchSHR (See [#375](https://github.com/Alviere/ach/issues/375))
 
 REMOVALS
 
-- Remove deprecated functions from `EntryDetail` (See [#385](https://github.com/moov-io/ach/issues/385))
+- Remove deprecated functions from `EntryDetail` (See [#385](https://github.com/Alviere/ach/issues/385))
 
 ## v0.4.0 (Released 2018-11-06)
 
@@ -390,13 +390,13 @@ BREAKING CHANGES
 ADDITIONS
 
 - Support `StandardEntryClassCode` (Batch types):
-  - ACK (See [#327](https://github.com/moov-io/ach/issues/327))
-  - ATX (See [#327](https://github.com/moov-io/ach/issues/327))
-  - DNE (See [#342](https://github.com/moov-io/ach/issues/342))
-  - ENR (See [#343](https://github.com/moov-io/ach/issues/343))
-- Support NOC for IAT Entries (See [#328](https://github.com/moov-io/ach/issues/328))
+  - ACK (See [#327](https://github.com/Alviere/ach/issues/327))
+  - ATX (See [#327](https://github.com/Alviere/ach/issues/327))
+  - DNE (See [#342](https://github.com/Alviere/ach/issues/342))
+  - ENR (See [#343](https://github.com/Alviere/ach/issues/343))
+- Support NOC for IAT Entries (See [#328](https://github.com/Alviere/ach/issues/328))
 - Add `FileFromJson` for reading `File` objects as JSON.
-- Add `X-Total-Count` response headers on `GET /files/:id/batches` (See [#280](https://github.com/moov-io/ach/issues/280))
+- Add `X-Total-Count` response headers on `GET /files/:id/batches` (See [#280](https://github.com/Alviere/ach/issues/280))
 
 IMPROVEMENTS
 
@@ -453,10 +453,10 @@ BUG FIXES
 FEATURES
 
 - Added HTTP Server
-- SEC Code CIE (Customer-Initiated Entry) ([#209](https://github.com/moov-io/ach/issues/209))
-- Support IAT ([#211](https://github.com/moov-io/ach/issues/211))
-- IAT Returns ([#233](https://github.com/moov-io/ach/issues/233))
-- Support CTX ([#212](https://github.com/moov-io/ach/issues/212))
+- SEC Code CIE (Customer-Initiated Entry) ([#209](https://github.com/Alviere/ach/issues/209))
+- Support IAT ([#211](https://github.com/Alviere/ach/issues/211))
+- IAT Returns ([#233](https://github.com/Alviere/ach/issues/233))
+- Support CTX ([#212](https://github.com/Alviere/ach/issues/212))
 
 IMPROVEMENTS
 

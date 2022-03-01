@@ -21,7 +21,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/moov-io/ach"
+	"github.com/Alviere/ach"
 )
 
 func TestSegmentKeepTraceNumber(t *testing.T) {

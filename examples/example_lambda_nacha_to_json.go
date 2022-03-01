@@ -15,6 +15,7 @@
 // specific language governing permissions and limitations
 // under the License.
 
+//go:build examples
 // +build examples
 
 package main
@@ -23,8 +24,8 @@ import (
 	"context"
 	"strings"
 
+	"github.com/Alviere/ach"
 	"github.com/aws/aws-lambda-go/lambda"
-	"github.com/moov-io/ach"
 	"github.com/moov-io/base"
 )
 

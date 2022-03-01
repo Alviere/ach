@@ -21,7 +21,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/moov-io/ach"
+	"github.com/Alviere/ach"
 )
 
 // Example_ppdWriteCredit writes a PPD credit file

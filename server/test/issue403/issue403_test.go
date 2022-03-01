@@ -23,13 +23,13 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/moov-io/ach"
+	"github.com/Alviere/ach"
 )
 
 // Testissue403 attempts to parse a few JSON files as ach.Batch objects, but
 // each JSON object is malformed and we're matching on the error returned.
 //
-// See: https://github.com/moov-io/ach/issues/403
+// See: https://github.com/Alviere/ach/issues/403
 func TestIssue403(t *testing.T) {
 	expectError := func(path string, msg string) {
 		t.Helper()

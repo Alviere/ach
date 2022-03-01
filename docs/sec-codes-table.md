@@ -8,7 +8,7 @@ menubar: docs-menu
 
 ## Picking which Standard Entry Class Code code to use
 
-The [NACHA Corporate Rules and Guidelines](https://github.com/moov-io/ach/blob/master/docs/2013-Corporate-Rules-and-Guidelines.pdf) offer a helpful table for choosing the correct Standard Entry Class (SEC) Code to use for a given enrollment and transaction. The table has been re-written below:
+The [NACHA Corporate Rules and Guidelines](https://github.com/Alviere/ach/blob/master/docs/2013-Corporate-Rules-and-Guidelines.pdf) offer a helpful table for choosing the correct Standard Entry Class (SEC) Code to use for a given enrollment and transaction. The table has been re-written below:
 
 ### Point of Sale Transactions
 

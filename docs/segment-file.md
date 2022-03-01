@@ -16,7 +16,7 @@ Note: Segmented files (via `SegmentFile()`) are only in ACH v1.1.0 and later.
 
 ## Creating Segmented Files
 
-An ACH [File](https://godoc.org/github.com/moov-io/ach#File) supports calling [SegmentFile](https://godoc.org/github.com/moov-io/ach#File.SegmentFile) to create a debit ach file and credit ach file from an ach file that contains mixed debits and credits.
+An ACH [File](https://godoc.org/github.com/Alviere/ach#File) supports calling [SegmentFile](https://godoc.org/github.com/Alviere/ach#File.SegmentFile) to create a debit ach file and credit ach file from an ach file that contains mixed debits and credits.
 
 ```go
 // open an ACH file(from the ./examples/ directory)

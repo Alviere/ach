@@ -12,7 +12,7 @@ A Notification of Change (NOC) is a non-dollar entry transmitted from a receivin
 
 The Standard Entry Class code for an NOC is "COR". There are a few possible reasons for an NOC, each defined by a "change code". The most common codes are `C01` for an incorrect account number and `C02` for an outdated routing number. We have [a list of supported change codes](#change-codes) below.
 
-NOCs are identified by an [Addenda98](https://pkg.go.dev/github.com/moov-io/ach?tab=doc#Addenda98) record on the EntryDetail with a [ChangeCode](https://pkg.go.dev/github.com/moov-io/ach?tab=doc#ChangeCode) that can be processed.
+NOCs are identified by an [Addenda98](https://pkg.go.dev/github.com/Alviere/ach?tab=doc#Addenda98) record on the EntryDetail with a [ChangeCode](https://pkg.go.dev/github.com/Alviere/ach?tab=doc#ChangeCode) that can be processed.
 
 ### Processing
 
@@ -37,7 +37,7 @@ The Originator must make specified changes within six banking days of receiving 
 
 ### Creation
 
-When creating an NOC entry, add an [Addenda98](https://pkg.go.dev/github.com/moov-io/ach?tab=doc#Addenda98) record onto the EntryDetail with the appropriate change code.
+When creating an NOC entry, add an [Addenda98](https://pkg.go.dev/github.com/Alviere/ach?tab=doc#Addenda98) record onto the EntryDetail with the appropriate change code.
 
 ```go
 addenda98 := ach.NewAddenda98()

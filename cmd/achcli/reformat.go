@@ -10,7 +10,7 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/moov-io/ach"
+	"github.com/Alviere/ach"
 )
 
 func reformat(as string, filepath string) error {

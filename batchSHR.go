@@ -18,7 +18,7 @@
 package ach
 
 import (
-	"github.com/moov-io/ach/internal/usabbrev"
+	"github.com/Alviere/ach/internal/usabbrev"
 )
 
 // BatchSHR holds the BatchHeader and BatchControl and all EntryDetail for SHR Entries.

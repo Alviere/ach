@@ -21,7 +21,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/moov-io/ach"
+	"github.com/Alviere/ach"
 	"github.com/moov-io/base"
 
 	"github.com/go-kit/kit/log"

@@ -22,7 +22,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/moov-io/ach"
+	"github.com/Alviere/ach"
 )
 
 func TestIssue751(t *testing.T) {

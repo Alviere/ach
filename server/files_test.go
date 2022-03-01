@@ -33,7 +33,7 @@ import (
 
 	"github.com/moov-io/base"
 
-	"github.com/moov-io/ach"
+	"github.com/Alviere/ach"
 
 	"github.com/go-kit/kit/log"
 	httptransport "github.com/go-kit/kit/transport/http"

@@ -10,7 +10,7 @@ menubar: docs-menu
 
 ACH files and their EntryDetail records may be returned for a variety of reasons defined by "return codes". Either the originating (ODFI) or receiving (RDFI) financial institution can issue a return. Some of the most common reasons include: insufficient funds (`R01`) and account information not found (`R03`).
 
-Returns are identified by an [Addenda99](https://pkg.go.dev/github.com/moov-io/ach?tab=doc#Addenda99) record on the EntryDetail with a [ReturnCode](https://pkg.go.dev/github.com/moov-io/ach?tab=doc#ReturnCode) that can be processed.
+Returns are identified by an [Addenda99](https://pkg.go.dev/github.com/Alviere/ach?tab=doc#Addenda99) record on the EntryDetail with a [ReturnCode](https://pkg.go.dev/github.com/Alviere/ach?tab=doc#ReturnCode) that can be processed.
 
 ### Processing
 
@@ -22,7 +22,7 @@ The `R05` return code is used when an unauthorized corporate debit (standard ent
 
 ### Creation
 
-When creating a return entry add an [Addenda99](https://pkg.go.dev/github.com/moov-io/ach?tab=doc#Addenda99) record onto the EntryDetail with the appropriate return code. You'll need to copy the original `TraceNumber` and populate a new value when returning the file.
+When creating a return entry add an [Addenda99](https://pkg.go.dev/github.com/Alviere/ach?tab=doc#Addenda99) record onto the EntryDetail with the appropriate return code. You'll need to copy the original `TraceNumber` and populate a new value when returning the file.
 
 ```go
 addenda99 := NewAddenda99()

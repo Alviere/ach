@@ -1,4 +1,4 @@
-module github.com/moov-io/ach
+module github.com/Alviere/ach
 
 require (
 	github.com/Pallinder/go-randomdata v1.2.0

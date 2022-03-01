@@ -18,7 +18,7 @@
 package ach
 
 import (
-	"github.com/moov-io/ach/internal/usabbrev"
+	"github.com/Alviere/ach/internal/usabbrev"
 )
 
 // BatchPOS holds the BatchHeader and BatchControl and all EntryDetail for POS Entries.

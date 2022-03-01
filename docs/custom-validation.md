@@ -10,7 +10,7 @@ menubar: docs-menu
 
 ACH files can vary sometimes from the official NACHA guidelines due to vendor changes. Moov ACH defaults to NACHA guidelines, so to handle this there's an exported `ValidateWith(opts)` method on some structures (`File`, `FileHeader`, etc).
 
-The [`ValidateOpts`](https://godoc.org/github.com/moov-io/ach#ValidateOpts) struct can have fields added in minor releases without breaking API compatibility with callers. The default values in this struct match with NACHA's guidelines.
+The [`ValidateOpts`](https://godoc.org/github.com/Alviere/ach#ValidateOpts) struct can have fields added in minor releases without breaking API compatibility with callers. The default values in this struct match with NACHA's guidelines.
 
 ## Validation Options
 

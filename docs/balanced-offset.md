@@ -8,7 +8,7 @@ menubar: docs-menu
 
 # Balanced Offsets
 
-ACH files can have "offset records" which are [EntryDetail](https://godoc.org/github.com/moov-io/ach#EntryDetail) records that balance a file's debits and credits. This means if there are debits, there is a credit offset matching the sum of the debits. If there are credits, there is a debit offset matching the sum of the credits. They are mutually exclusive.
+ACH files can have "offset records" which are [EntryDetail](https://godoc.org/github.com/Alviere/ach#EntryDetail) records that balance a file's debits and credits. This means if there are debits, there is a credit offset matching the sum of the debits. If there are credits, there is a debit offset matching the sum of the credits. They are mutually exclusive.
 
 Offset files are used to offset transactions from a single account inside of the ODFI. The Offset is the last record which settles the funds into a single ODFI account.
 
@@ -16,7 +16,7 @@ Note: Balanced offset files (via `WithOffset`) are only in ACH v1.1.0 and later.
 
 ## Setting Offset Metadata
 
-An ACH [Batch](https://godoc.org/github.com/moov-io/ach#Batch) supports calling [WithOffset](https://godoc.org/github.com/moov-io/ach#Batch.WithOffset) to set offset information such as routing number, account number, account type, and a description.
+An ACH [Batch](https://godoc.org/github.com/Alviere/ach#Batch) supports calling [WithOffset](https://godoc.org/github.com/Alviere/ach#Batch.WithOffset) to set offset information such as routing number, account number, account type, and a description.
 
 ```go
 bh := ach.NewBatchHeader()

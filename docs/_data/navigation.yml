@@ -1,7 +1,7 @@
 - name: API
   link: https://moov-io.github.io/ach/api
 - name: Go
-  link: https://pkg.go.dev/github.com/moov-io/ach#section-documentation
+  link: https://pkg.go.dev/github.com/Alviere/ach#section-documentation
 - name: Demo
   link: https://oss.moov.io/ach/
 - name: Community

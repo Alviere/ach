@@ -23,8 +23,8 @@ import (
 	"strings"
 	"unicode/utf8"
 
-	"github.com/moov-io/ach/internal/iso3166"
-	"github.com/moov-io/ach/internal/iso4217"
+	"github.com/Alviere/ach/internal/iso3166"
+	"github.com/Alviere/ach/internal/iso4217"
 )
 
 // msgServiceClass

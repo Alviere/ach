@@ -8,7 +8,7 @@ menubar: docs-menu
 ---
 
 # Use AWS Lambda to parse a NACHA-formatted string to JSON
-This walkthrough provides instructions on how to use the [`github.com/moov-io/ach`](https://pkg.go.dev/github.com/moov-io/ach) Go library to
+This walkthrough provides instructions on how to use the [`github.com/Alviere/ach`](https://pkg.go.dev/github.com/Alviere/ach) Go library to
 parse a NACHA-formatted string in a Lambda event and return the resulting JSON response.
 
 The Lambda event could be triggered by a variety of sources: upload to S3 bucket, API Gateway HTTP request, SQS message, another Lambda, etc. Likewise, the response can be sent to a variety of destinations. This walkthrough doesn't demonstrate a particular trigger or destination, but it can easily be adapted for the use cases mentioned.
@@ -25,7 +25,7 @@ import (
 	"strings"
 
 	"github.com/aws/aws-lambda-go/lambda"
-	"github.com/moov-io/ach"
+	"github.com/Alviere/ach"
 	"github.com/moov-io/base"
 )
 

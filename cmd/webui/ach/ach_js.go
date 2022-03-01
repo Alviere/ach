@@ -7,7 +7,7 @@ import (
 	"strings"
 	"syscall/js"
 
-	"github.com/moov-io/ach"
+	"github.com/Alviere/ach"
 )
 
 func parseContents(input string) (string, error) {

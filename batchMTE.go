@@ -20,7 +20,7 @@ package ach
 import (
 	"strings"
 
-	"github.com/moov-io/ach/internal/usabbrev"
+	"github.com/Alviere/ach/internal/usabbrev"
 )
 
 // BatchMTE holds the BatchHeader, BatchControl, and EntryDetail for Machine Transfer Entry (MTE) entries.

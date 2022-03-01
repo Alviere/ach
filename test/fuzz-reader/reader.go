@@ -20,7 +20,7 @@ package fuzzreader
 import (
 	"bytes"
 
-	"github.com/moov-io/ach"
+	"github.com/Alviere/ach"
 )
 
 // Return codes (from go-fuzz docs)
